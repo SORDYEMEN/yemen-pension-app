@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Cairo", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-gov-green: #1B5E20;
+  --color-gov-white: #FFFFFF;
+  --color-gov-bg: #F5F5F5;
+  --color-gov-text-primary: #424242;
+  --color-gov-text-secondary: #757575;
+  --color-gov-error: #D32F2F;
+  --color-gov-link: #1976D2;
+  
+  --radius-gov: 8px;
+}
+
+@layer base {
+  body {
+    @apply bg-gov-bg text-gov-text-primary font-sans;
+    direction: rtl;
+  }
+}
+
+.shadow-gov {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 25s linear infinite;
+  will-change: transform;
+}
